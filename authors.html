@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Authors - The Best News</title>
+    <style>
+        /* Common Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #ddd;
+        }
+        
+        header img {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            color: #333;
+        }
+        
+        .authors-container {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+        }
+        
+        /* Johnny's Professional Section */
+        .johnny-section {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-left: 5px solid #2c3e50;
+        }
+        
+        .johnny-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #ecf0f1;
+            padding-bottom: 20px;
+        }
+        
+        .johnny-header img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-right: 30px;
+            border: 3px solid #3498db;
+        }
+        
+        .johnny-info h2 {
+            font-size: 2em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .johnny-info .title {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        
+        .johnny-bio {
+            font-size: 1.1em;
+            color: #34495e;
+            line-height: 1.8;
+        }
+        
+        .johnny-bio p {
+            margin-bottom: 20px;
+        }
+        
+        .johnny-contact {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+        
+        .johnny-contact h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .johnny-contact p {
+            margin-bottom: 10px;
+            color: #555;
+        }
+        
+        /* Bobby's Terrible Section */
+        .bobby-section {
+            background: #FF00FF;
+            background-image: 
+                radial-gradient(circle at 20% 80%, #FF0000 20%, transparent 20%),
+                radial-gradient(circle at 80% 20%, #00FF00 15%, transparent 15%),
+                radial-gradient(circle at 40% 40%, #0000FF 25%, transparent 25%);
+            padding: 30px;
+            border: 15px ridge #FFD700;
+            transform: rotate(1deg);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .bobby-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #00FF00, #FF00FF, #00FFFF);
+            padding: 20px;
+            border: 8px dotted #FFFF00;
+            transform: rotate(-2deg);
+        }
+        
+        .bobby-header img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-right: 30px;
+            border: 10px solid #FF0000;
+            background-color: #FFFF00;
+            padding: 5px;
+            animation: spin 5s infinite linear;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .bobby-info h2 {
+            font-size: 2.5em;
+            color: #FFFF00;
+            text-shadow: 3px 3px 0 #0000FF, -3px -3px 0 #00FF00;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-family: "Comic Sans MS", "Papyrus", fantasy;
+        }
+        
+        .bobby-info .title {
+            font-size: 1.5em;
+            color: #00FFFF;
+            background-color: #FF0000;
+            padding: 10px;
+            border: 5px dashed #00FF00;
+            transform: rotate(2deg);
+            display: inline-block;
+        }
+        
+        .bobby-bio {
+            font-size: 1.3em;
+            color: #00FF00;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 25px;
+            border: 8px groove #FF00FF;
+            transform: rotate(-1deg);
+            margin-top: 20px;
+        }
+        
+        .bobby-bio p {
+            margin-bottom: 20px;
+            color: #0000FF;
+            font-weight: bold;
+            text-shadow: 1px 1px 0 #FFFF00;
+        }
+        
+        .bobby-contact {
+            margin-top: 30px;
+            padding: 20px;
+            background: linear-gradient(to right, #FF0000, #00FF00, #0000FF);
+            border: 5px double #FFFF00;
+            transform: rotate(1deg);
+        }
+        
+        .bobby-contact h3 {
+            color: #FFFF00;
+            text-shadow: 2px 2px 0 #000000;
+            margin-bottom: 15px;
+            text-align: center;
+            text-decoration: underline wavy #00FFFF;
+        }
+        
+        .bobby-contact p {
+            margin-bottom: 10px;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 1.2em;
+        }
+        
+        .blink {
+            animation: blink 0.8s infinite;
+        }
+        
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        
+        .marquee {
+            background: linear-gradient(to right, #FF0000, #00FF00, #0000FF);
+            color: #FFFFFF;
+            padding: 15px;
+            margin: 20px 0;
+            border: 5px dotted #FFFF00;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 30px;
+            color: #7f8c8d;
+            border-top: 1px solid #ddd;
+        }
+        
+        @media (max-width: 768px) {
+            .johnny-header, .bobby-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .johnny-header img, .bobby-header img {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="./Assets/best_news_logo.png" alt="The Best News Logo">
+            <h1>Our Authors</h1>
+        </header>
+        
+        <div class="authors-container">
+            <!-- Johnny Article-Man's Professional Section -->
+            <section class="johnny-section">
+                <div class="johnny-header">
+                    <img src="./Assets/johnny_article_man_headshot.png" alt="Johnny Article-Man">
+                    <div class="johnny-info">
+                        <h2>Johnny Article-Man</h2>
+                        <div class="title">Senior Journalist & Editorial Director</div>
+                    </div>
+                </div>
+                
+                <div class="johnny-bio">
+                    <p>With over 15 years of distinguished experience in investigative journalism and editorial leadership, I have dedicated my career to upholding the highest standards of journalistic integrity and excellence. My work has been recognized with multiple awards, including the prestigious Global Journalism Excellence Award and the International Press Freedom Medal.</p>
+                    
+                    <p>My approach to journalism is rooted in meticulous research, factual accuracy, and a commitment to uncovering truth. I hold a Master's degree in Journalism from Columbia University and have served as a guest lecturer at several esteemed institutions, including the Medill School of Journalism and the Reuters Institute for the Study of Journalism.</p>
+                    
+                    <p>At The Best News, I lead our team of dedicated journalists in producing content that not only informs but elevates public discourse. My columns on political analysis and social commentary have been cited in academic publications and policy discussions, reflecting the substantive impact of quality journalism on society.</p>
+                    
+                    <p>I maintain strict professional boundaries and expect the same from my colleagues. The credibility of our publication depends on maintaining these standards without exception.</p>
+                </div>
+                
+                <div class="johnny-contact">
+                    <h3>Professional Contact</h3>
+                    <p>Email: thebestnewsofficial+johnny-a@gmail.com (verified professional account)</p>
+                    <p>Office: +1 (555) 123-4567</p>
+                    <p><em>Please note: I do not respond to unprofessional inquiries or communications that fail to meet basic standards of business etiquette.</em></p>
+                </div>
+            </section>
+            
+            <!-- Bobby Schwaterburg's Terrible Section -->
+            <section class="bobby-section">
+                <div class="marquee">
+                    <marquee behavior="scroll" direction="left" scrollamount="10">
+                        I AM THE AUTHOR OF ALL TIME BABY
+                    </marquee>
+                </div>
+                
+                <div class="bobby-header">
+                    <img src="./Assets/bobby_headshot.png" alt="Bobby Schwaterburg">
+                    <div class="bobby-info">
+                        <h2 class="blink">Bobby Schwaterburg</h2>
+                        <div class="title">THE COOLEST WRITER GUY</div>
+                    </div>
+                </div>
+                
+                <div class="bobby-bio">
+                    <p>HEY GUYS ITS ME BOBBY!!! I WRITE THE BEST ARTICLES AND MY BROTHER JOHNNY IS A BIG DUMB IDIOT WHO THINKS HES SO SMART WITH HIS FANCY WORDS AND STUFF. I ONCE ATE 17 HOTDOGS IN 5 MINUTES AND THEN THREW UP ON A SELF SERVE COUNTER AT KMART. THE EMPLOYEES WERE MAD BUT I TOLD THEM I WAS THE REPAIR GUY.</p>
+                    
+                    <p>I STARTED WRITING WHEN I WAS 7 YEARS OLD AND WROTE "THE GLORPOBULOUS CHRONICLES" ON MY MOMS WALL WITH PERMANENT MARKER. SHE WAS SUPER PROUD AND ONLY CRIED A LITTLE BIT. NOW I WRITE FOR THE BEST NEWS AND EVERYONE LOVES MY ARTICLES ESPECIALLY THE ONE ABOUT SHOES.</p>
+                    
+                    <p>MY WRITING PROCESS INVOLVES WRITING THE ARTICLE. THIS IS CALLED "THE SCHWATERBURG METHOD" AND ITS BEING STUDIED BY HARVARD UNIVERSITY.</p>
+                    
+                    <p>JOHNNY SAYS MY ARTICLES ARE "UNPROFESSIONAL" AND "LACK FACTUAL BASIS" BUT HES JUST JEALOUS BECAUSE I HAVE WAY MORE FUN THAN HE DOES. I ONCE REPLACED ALL THE INK IN HIS FANCY PENS WITH INK AND HE DIDNT NOTICE FOR A WEEK. HIS HANDS A MONTH LATE HAHAHAHAHA.</p>
+                </div>
+                
+                <div class="bobby-contact">
+                    <h3>HOW TO CONTACT ME (THE BEST AUTHOR)</h3>
+                    <p>EMAIL: thebestnewsofficial+bobby-s@gmail.com (WAY COOLER THAN JOHNNYS EMAIL)</p>
+                    <p>PHONE: 1-800-SCHWATERBURG</p>
+                    <p>OR JUST YELL REALLY LOUD AND I MIGHT HEAR YOU</p>
+                </div>
+            </section>
+        </div>
+        
+        <footer>
+            <p>&copy; 2025 the best news. we the best news.</p>
+            <p><a href="index.html" style="color: #3498db;">Back to Homepage</a></p>
+        </footer>
+    </div>
+</body>
+</html>

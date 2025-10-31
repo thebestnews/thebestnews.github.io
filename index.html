@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>the best nwes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Times New Roman", "Arial Black", "Brush Script MT", cursive;
+        }
+        
+        body {
+            background-color: #8B4513;
+            background-image: 
+                radial-gradient(circle at 20% 80%, #FF0000 20%, transparent 20%),
+                radial-gradient(circle at 80% 20%, #00FF00 15%, transparent 15%),
+                radial-gradient(circle at 40% 40%, #0000FF 25%, transparent 25%);
+            color: #00FFFF;
+            line-height: 1.2;
+            border: 15px ridge #FFD700;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px;
+            background-color: rgba(139, 0, 139, 0.8);
+            border: 8px dotted #FFFF00;
+            transform: rotate(0.5deg);
+            position: relative;
+            z-index: 2;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            margin-bottom: 20px;
+            border-bottom: 5px double #FF0000;
+            background: linear-gradient(45deg, #00FF00, #FF00FF, #00FFFF);
+        }
+        
+        .logo {
+            font-size: 4.5rem;
+            font-weight: bold;
+            color: #FF0000;
+            margin-bottom: 5px;
+            text-shadow: 3px 3px 0 #0000FF, -3px -3px 0 #00FF00;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            font-family: "Comic Sans MS", "Papyrus", fantasy;
+            background-color: #FFFF00;
+            padding: 15px;
+            border: 10px groove #FF00FF;
+            transform: rotate(-2deg);
+        }
+        
+        .tagline {
+            font-size: 2rem;
+            color: #FFFF00;
+            background-color: #0000FF;
+            padding: 10px;
+            border: 5px dashed #00FF00;
+            margin-top: 15px;
+            transform: rotate(1deg);
+        }
+        
+        .welcome {
+            text-align: center;
+            font-size: 3rem;
+            margin: 40px 0;
+            color: #00FF00;
+            background-color: #FF0000;
+            padding: 20px;
+            border: 12px ridge #0000FF;
+            text-decoration: underline overline wavy #FFFF00;
+            font-weight: 900;
+            text-transform: uppercase;
+            transform: rotate(-1deg);
+        }
+        
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #00FFFF;
+            border: 10px double #8B4513;
+        }
+        
+        .article-card {
+            background: linear-gradient(135deg, #FF69B4, #7CFC00);
+            border-radius: 0;
+            overflow: visible;
+            box-shadow: 10px 10px 0 #000000, -10px -10px 0 #FFFFFF;
+            transition: all 0.5s ease;
+            border: 8px dotted #000000;
+            position: relative;
+            padding: 10px;
+        }
+        
+        .article-card:hover {
+            transform: rotate(5deg) scale(1.1);
+            box-shadow: 15px 15px 0 #FF0000, -15px -15px 0 #0000FF;
+            background: linear-gradient(135deg, #FF0000, #00FF00);
+            z-index: 100;
+        }
+        
+        .article-image {
+            width: 100%;
+            height: 200px;
+            background-color: #000000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FFFFFF;
+            font-size: 4rem;
+            border: 5px solid #FFFF00;
+            margin-bottom: 15px;
+            font-family: "Wingdings", "Webdings", sans-serif;
+        }
+        
+        .traffic-light {
+            background: linear-gradient(to bottom, #FF0000, #FFFF00, #00FF00);
+        }
+        
+        .shoe-article {
+            background: repeating-linear-gradient(45deg, #8B4513, #8B4513 10px, #D2691E 10px, #D2691E 20px);
+        }
+        
+        .femboy-article {
+            background: radial-gradient(circle, #FFB6C1, #FF69B4, #DB7093);
+        }
+        
+        .article-content {
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 3px solid #000000;
+        }
+        
+        .article-title {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            color: #FF0000;
+            text-shadow: 2px 2px 0 #00FF00;
+            text-align: center;
+            text-decoration: underline;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+        
+        .article-excerpt {
+            color: #0000FF;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            background-color: #FFFF00;
+            padding: 8px;
+            border: 2px dashed #FF00FF;
+            text-align: center;
+        }
+        
+        .read-more {
+            display: block;
+            background: linear-gradient(to right, #FF0000, #00FF00, #0000FF);
+            color: #FFFFFF;
+            padding: 12px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            border: 3px solid #FFFF00;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            text-shadow: 1px 1px 0 #000000;
+            transition: all 0.3s ease;
+            box-shadow: 3px 3px 0 #000000;
+        }
+        
+        .read-more:hover {
+            background: linear-gradient(to right, #0000FF, #FF00FF, #FFFF00);
+            color: #000000;
+            transform: scale(1.1) rotate(-3deg);
+            box-shadow: 5px 5px 0 #FF0000;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 30px;
+            color: #FFFF00;
+            background: linear-gradient(45deg, #000000, #FF0000, #000000);
+            border-top: 8px double #00FF00;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        .blink {
+            animation: blink 0.5s infinite;
+        }
+        
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        
+        .marquee {
+            background: linear-gradient(to right, #FF0000, #00FF00, #0000FF);
+            color: #FFFFFF;
+            padding: 15px;
+            margin: 20px 0;
+            border: 5px dotted #FFFF00;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .spinning {
+            animation: spin 3s infinite linear;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .flashing {
+            animation: flash 0.2s infinite;
+        }
+        
+        @keyframes flash {
+            0% { background-color: #FF0000; }
+            25% { background-color: #00FF00; }
+            50% { background-color: #0000FF; }
+            75% { background-color: #FFFF00; }
+            100% { background-color: #FF00FF; }
+        }
+        
+        /* Bobby Clicker Styles */
+        #bobby-clicker {
+            position: fixed;
+            width: 120px;
+            height: 120px;
+            cursor: pointer;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            border: 5px solid #FF0000;
+            border-radius: 50%;
+            box-shadow: 0 0 20px #FFFF00;
+        }
+        
+        #bobby-clicker:hover {
+            transform: scale(1.2);
+        }
+        
+        /* Confetti styles */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background-color: #f00;
+            opacity: 0.7;
+            z-index: 9999;
+        }
+        
+        /* Shoe background elements */
+        .shoe-bg {
+            position: fixed;
+            width: 40px;
+            height: 20px;
+            background-image: url('./Assets/shoe.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            z-index: 1;
+            opacity: 0.7;
+        }
+        
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.8rem;
+            }
+            
+            .welcome {
+                font-size: 2rem;
+            }
+            
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .article-card:hover {
+                transform: rotate(3deg) scale(1.05);
+            }
+            
+            #bobby-clicker {
+                width: 80px;
+                height: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Bobby Clicker -->
+    <img id="bobby-clicker" src="./Assets/bobby_headshot.png" alt="Click Bobby for confetti!" style="top: 100px; left: 100px;">
+    
+    <!-- Confetti container -->
+    <div id="confetti-container"></div>
+    
+    <div class="container">
+        <header>
+            <div class="logo spinning">the best nwes</div>
+            <div class="tagline">we the best news</div>
+        </header>
+        
+        <div class="marquee">
+            <marquee behavior="scroll" direction="left" scrollamount="10">
+                hey guys the best news website is back. i, Gary Radish, welcome you to the best news. we the best news. as the ambassador for the best news, i ask that you tell all your friends about the best news. i am also able to pay IN CASH if you make articles for the best news. join the ranks of our esteemed writers such as Johnny Article-Man and Bobby Schwaterburg. come back soon!
+            </marquee>
+        </div>
+        
+        <div class="welcome blink">weclome to best news</div>
+        
+        <div class="articles-grid">
+            <div class="article-card">
+                <div class="article-image traffic-light">
+                    🚦
+                </div>
+                <div class="article-content">
+                    <h2 class="article-title">WHY ARE TRAFFIC LIGHTS THOSE COLOURS???</h2>
+                    <p class="article-excerpt">the traffic lights</p>
+                    <a href="./traffic.html" class="read-more">read</a>
+                </div>
+            </div>
+            
+            <div class="article-card">
+                <div class="article-image shoe-article">
+                    👟
+                </div>
+                <div class="article-content">
+                    <h2 class="article-title">shoes.</h2>
+                    <p class="article-excerpt">learn the shoes.</p>
+                    <a href="./shoe.html" class="read-more">read</a>
+                </div>
+            </div>
+            
+            <div class="article-card">
+                <div class="article-image femboy-article flashing">
+                    ⚧
+                </div>
+                <div class="article-content">
+                    <h2 class="article-title">cockin balls</h2>
+                    <p class="article-excerpt">boring ass article written by ai</p>
+                    <a href="./femboy.html" class="read-more">read</a>
+                </div>
+            </div>
+            <div class="article-card">
+                <div class="article-image shoe-article">
+                    JOHNNY LIVES
+                </div>
+                <div class="article-content">
+                    <h2 class="article-title">our authors</h2>
+                    <p class="article-excerpt">yes, the authors.</p>
+                    <a href="./authors.html" class="read-more">read</a>
+                </div>
+            </div>
+            <!-- New articles with new images -->
+            <div class="article-card">
+                <div class="article-image" style="background-color: #800080;">
+                    yes.
+                </div>
+                <div class="article-content">
+                    <h2 class="article-title">50000 SHOES</h2>
+                    <p class="article-excerpt">we have exactly fifty thousand shoes</p>
+                    <a href="./shoes.html" class="read-more">read</a>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p class="blink">&copy; 2025 the best news. we the best news</p>
+            <p>VISIT OUR SITE AGAIN SOON FOR MORE BEST NEWS!</p>
+            <p>GLORPUS IS BEST!</p>
+        </footer>
+    </div>
+
+    <script>
+        // Bobby Clicker functionality
+        const bobby = document.getElementById('bobby-clicker');
+        const confettiContainer = document.getElementById('confetti-container');
+        
+        // Move Bobby to a random position
+        function moveBobby() {
+            const maxX = window.innerWidth - bobby.offsetWidth;
+            const maxY = window.innerHeight - bobby.offsetHeight;
+            
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+            
+            bobby.style.left = `${randomX}px`;
+            bobby.style.top = `${randomY}px`;
+        }
+        
+        // Create confetti effect
+        function createConfetti() {
+            const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'];
+            
+            for (let i = 0; i < 150; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.left = `${Math.random() * 100}vw`;
+                confetti.style.top = `-10px`;
+                confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+                
+                const size = Math.random() * 10 + 5;
+                confetti.style.width = `${size}px`;
+                confetti.style.height = `${size}px`;
+                
+                confettiContainer.appendChild(confetti);
+                
+                // Animate confetti falling
+                const animation = confetti.animate([
+                    { transform: `translateY(0) rotate(0deg)`, opacity: 1 },
+                    { transform: `translateY(${window.innerHeight}px) rotate(${Math.random() * 360}deg)`, opacity: 0 }
+                ], {
+                    duration: Math.random() * 3000 + 2000,
+                    easing: 'cubic-bezier(0.1, 0.8, 0.2, 1)'
+                });
+                
+                // Remove confetti after animation completes
+                animation.onfinish = () => {
+                    confetti.remove();
+                };
+            }
+        }
+        
+        // Bobby click event
+        bobby.addEventListener('click', function() {
+            createConfetti();
+            moveBobby();
+            
+            // Play a fun sound if available
+            const audio = new Audio();
+            audio.src = './Assets/confetti_sound.mp3'; // This would be your sound file
+            audio.play().catch(e => console.log('Audio play failed:', e));
+        });
+        
+       
+        
+        // Initialize on load
+        window.addEventListener('load', function() {
+            createShoes();
+            // Start with Bobby in a random position
+            moveBobby();
+        });
+        
+        // My final addition: Make the entire page slightly wobble
+        setInterval(() => {
+            document.body.style.transform = `rotate(${Math.sin(Date.now() / 1000) * 0.5}deg)`;
+        }, 50);
+    </script>
+</body>
+</html>

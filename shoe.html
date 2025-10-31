@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOES: A COMPREHENSIVE GUIDE</title>
+    <style>
+        body {
+            font-family: "Comic Sans MS", "Papyrus", cursive;
+            margin: 0;
+            padding: 20px;
+            background-color: #ff00ff;
+            background-image: repeating-linear-gradient(45deg, #ffff00, #ffff00 10px, #ff00ff 10px, #ff00ff 20px);
+            color: #00ff00;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            background-color: #00ffff;
+            padding: 20px;
+            border: 15px dotted #ff0000;
+            transform: rotate(-2deg);
+        }
+        
+        h1 {
+            font-size: 4em;
+            color: #ff0000;
+            text-shadow: 5px 5px 0 #ffff00, -5px -5px 0 #0000ff;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            background-color: #00ff00;
+            padding: 10px;
+            border: 8px ridge #ff00ff;
+        }
+        
+        h2 {
+            font-size: 3em;
+            color: #ffff00;
+            background-color: #0000ff;
+            padding: 15px;
+            margin: 40px -20px 20px -20px;
+            border: 10px double #ff0000;
+            text-align: center;
+            transform: rotate(1deg);
+            text-decoration: underline wavy #ff00ff;
+        }
+        
+        p {
+            font-size: 1.5em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            background-color: rgba(255, 255, 0, 0.7);
+            padding: 15px;
+            border: 5px dashed #ff0000;
+            color: #0000ff;
+            font-weight: bold;
+        }
+        
+        .article-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 40px;
+            background-color: #ff0000;
+            padding: 20px;
+            border: 12px groove #ffff00;
+            transform: rotate(3deg);
+        }
+        
+        .article-author img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-right: 30px;
+            border: 10px solid #00ff00;
+            background-color: #0000ff;
+            padding: 5px;
+        }
+        
+        .author-info {
+            background-color: #ffff00;
+            padding: 15px;
+            border: 7px dotted #ff00ff;
+        }
+        
+        .author-info p {
+            margin: 0;
+            color: #ff0000;
+            background: none;
+            border: none;
+            padding: 5px;
+        }
+        
+        .footer {
+            text-align: center;
+            font-size: 1.2em;
+            margin-top: 40px;
+            color: #ffff00;
+            background-color: #0000ff;
+            padding: 20px;
+            border: 10px ridge #ff0000;
+            transform: rotate(-1deg);
+        }
+        
+        .shoe-image {
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            z-index: 100;
+            animation: spin 5s infinite linear;
+        }
+        
+        .shoelace-image {
+            width: 120px;
+            height: 40px;
+            position: absolute;
+            z-index: 99;
+            animation: wiggle 3s infinite alternate;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes wiggle {
+            0% { transform: rotate(-10deg); }
+            100% { transform: rotate(10deg); }
+        }
+        
+        .content-wrapper {
+            position: relative;
+            background-color: #00ffff;
+            padding: 30px;
+            border: 20px solid #ffff00;
+            margin: 20px;
+            box-shadow: 15px 15px 0 #ff0000, -15px -15px 0 #0000ff;
+        }
+        
+        .highlight {
+            background-color: #ff00ff;
+            color: #ffff00;
+            padding: 5px;
+            font-size: 1.2em;
+            text-decoration: underline;
+        }
+        
+        .quote {
+            background-color: #0000ff;
+            color: #ffff00;
+            padding: 20px;
+            border-left: 15px solid #ff0000;
+            margin: 20px 0;
+            font-style: italic;
+            font-size: 1.3em;
+            transform: rotate(-0.5deg);
+        }
+        
+        .blink {
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        
+        .marquee {
+            white-space: nowrap;
+            overflow: hidden;
+            background-color: #ff0000;
+            color: #ffff00;
+            padding: 10px;
+            font-size: 1.5em;
+            margin: 20px 0;
+            border: 5px dotted #00ff00;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Shoes everywhere! -->
+<img src="./Assets/shoe.png" class="shoe-image" style="top: 50px; left: 50px;">
+<img src="./Assets/shoe.png" class="shoe-image" style="top: 100px; left: 200px;">
+<img src="./Assets/shoe.png" class="shoe-image" style="top: 300px; left: 80px;">
+<img src="./Assets/shoe.png" class="shoe-image" style="top: 500px; left: 300px;">
+<img src="./Assets/shoe.png" class="shoe-image" style="top: 700px; left: 150px;">
+<img src="./Assets/shoe.png" class="shoe-image" style="top: 900px; left: 250px;">
+<img src="./Assets/shoe.png" class="shoe-image" style="top: 1100px; left: 100px;">
+<img src="./Assets/shoe.png" class="shoe-image" style="top: 1300px; left: 300px;">
+<img src="./Assets/shoe.png" class="shoe-image" style="top: 1500px; left: 200px;">
+<img src="./Assets/shoe.png" class="shoe-image" style="top: 1700px; left: 50px;">
+<img src="./Assets/shoe.png" class="shoe-image" style="top: 200px; right: 100px;">
+<img src="./Assets/shoe.png" class="shoe-image" style="top: 400px; right: 200px;">
+<img src="./Assets/shoe.png" class="shoe-image" style="top: 600px; right: 50px;">
+<img src="./Assets/shoe.png" class="shoe-image" style="top: 800px; right: 150px;">
+<img src="./Assets/shoe.png" class="shoe-image" style="top: 1000px; right: 100px;">
+<img src="./Assets/shoe.png" class="shoe-image" style="top: 1200px; right: 250px;">
+<img src="./Assets/shoe.png" class="shoe-image" style="top: 1400px; right: 150px;">
+<img src="./Assets/shoe.png" class="shoe-image" style="top: 1600px; right: 50px;">
+<img src="./Assets/shoe.png" class="shoe-image" style="top: 1800px; right: 200px;">
+<img src="./Assets/shoe.png" class="shoe-image" style="top: 2000px; right: 100px;">
+<img src="./Assets/shoe.png" class="shoe-image" style="top: 2200px; right: 250px;">
+<img src="./Assets/shoe.png" class="shoe-image" style="top: 2400px; right: 150px;">
+<img src="./Assets/shoe.png" class="shoe-image" style="top: 2600px; right: 50px;">
+<img src="./Assets/shoe.png" class="shoe-image" style="top: 2800px; right: 200px;">
+<img src="./Assets/shoe.png" class="shoe-image" style="top: 3000px; right: 100px;">
+
+<!-- Shoelaces everywhere! -->
+<img src="./Assets/shoelace.png" class="shoelace-image" style="top: 80px; left: 150px;">
+<img src="./Assets/shoelace.png" class="shoelace-image" style="top: 250px; left: 300px;">
+<img src="./Assets/shoelace.png" class="shoelace-image" style="top: 450px; left: 100px;">
+<img src="./Assets/shoelace.png" class="shoelace-image" style="top: 650px; left: 250px;">
+<img src="./Assets/shoelace.png" class="shoelace-image" style="top: 850px; left: 50px;">
+<img src="./Assets/shoelace.png" class="shoelace-image" style="top: 1050px; left: 200px;">
+<img src="./Assets/shoelace.png" class="shoelace-image" style="top: 1250px; left: 350px;">
+<img src="./Assets/shoelace.png" class="shoelace-image" style="top: 1450px; left: 150px;">
+<img src="./Assets/shoelace.png" class="shoelace-image" style="top: 1650px; left: 300px;">
+<img src="./Assets/shoelace.png" class="shoelace-image" style="top: 1850px; left: 100px;">
+<img src="./Assets/shoelace.png" class="shoelace-image" style="top: 2050px; left: 250px;">
+<img src="./Assets/shoelace.png" class="shoelace-image" style="top: 2250px; left: 50px;">
+<img src="./Assets/shoelace.png" class="shoelace-image" style="top: 2450px; left: 200px;">
+<img src="./Assets/shoelace.png" class="shoelace-image" style="top: 2650px; left: 350px;">
+<img src="./Assets/shoelace.png" class="shoelace-image" style="top: 2850px; left: 150px;">
+<img src="./Assets/shoelace.png" class="shoelace-image" style="top: 150px; right: 150px;">
+<img src="./Assets/shoelace.png" class="shoelace-image" style="top: 350px; right: 300px;">
+<img src="./Assets/shoelace.png" class="shoelace-image" style="top: 550px; right: 100px;">
+<img src="./Assets/shoelace.png" class="shoelace-image" style="top: 750px; right: 250px;">
+<img src="./Assets/shoelace.png" class="shoelace-image" style="top: 950px; right: 50px;">
+<img src="./Assets/shoelace.png" class="shoelace-image" style="top: 1150px; right: 200px;">
+<img src="./Assets/shoelace.png" class="shoelace-image" style="top: 1350px; right: 350px;">
+<img src="./Assets/shoelace.png" class="shoelace-image" style="top: 1550px; right: 150px;">
+<img src="./Assets/shoelace.png" class="shoelace-image" style="top: 1750px; right: 300px;">
+<img src="./Assets/shoelace.png" class="shoelace-image" style="top: 1950px; right: 100px;">
+
+<div class="content-wrapper">
+    <header>
+        <img src="./Assets/best_news_logo.png" alt="The Best News Logo" width="300" style="border: 10px solid #ff0000; background-color: #ffff00; padding: 10px;">
+        <h1 class="blink">SHOES: A COMPREHENSIVE GUIDE</h1>
+    </header>
+
+    <main>
+        <div class="marquee">
+            <marquee behavior="scroll" direction="left">BREAKING: SHOES LINKED TO AUTISM AND STAGE 4 TESTICULAR CANCER.</marquee>
+        </div>
+        
+        <section>
+            <h2>WHAT SHOES?</h2>
+            <p>Shoes are typically used as footwear to protect the feet of humans or to improve the speed and ease of walking or sprinting. Shoes can also be used to insulate the feet of humans in order to make the feet hot. Some shoes have steel toes in order to protect the feet from blunt force like a dropped heavy object that would otherwise cause severe bodily harm. Back in 2025 a boy named <span class="highlight">Will Reynolds</span> would pour chocolate milk down the thighs of <span class="highlight">Kydan Tadd</span> and would drink the milk from his hairy toes once the milk trickled down.</p>
+            
+            <p>Some women wear high heels, a type of shoe that when worn would increase the length of the foot by several kilometers. Celebrities would push this to the extreme and would hunch over in order to not have their head exit the atmosphere. Those who practiced this tradition would be known as <span class="highlight">Kilometers-Tall-High-Heels-Wearing-People</span>. The tradition was quickly abolished after <span class="highlight">Kamala Harris</span>– the famous hyena pornography artist –was decapitated after flight 407 collided with her skull at speeds of over a whole kilometer an hour. Kamala Harris died in the hospital and her shoes are kept in the Washington monument in order to prevent vandalism.</p>
+        </section>
+
+        <section>
+            <h2>HOW SHOES?</h2>
+            <p>But some may wonder why shoes. And I am here to answer shoes. Shoes were initially invented. The shoes. Melted plastic is poured into a mold shaped like whatever type of shoe you want (e.g clogs, Jesus sandals, Labubu Grippers) and air fried at two hundred degrees for twenty minutes, to the exact meter. This is to prevent the plastic from congealing and becoming unpleasant to consume.</p>
+            
+            <p>After the plastic has turned a golden-brown colour, you need to take it out and put it on a cutting board/a plate/the counter/my nutsack and let it cool. Afterwards you can season the chicken with salt and pepper, and paprika to taste. This recipe is guaranteed to wow your family and friends in only 20 minutes with the perfectly crisp and seasoned skin and expert presentation.</p>
+        </section>
+
+        <section>
+            <h2>SHOELACES</h2>
+            <p>But what are those fangly-dangly bits on the top of your shoes? <span class="highlight">Johnny Article-Man</span> says:</p>
+            
+            <div class="quote">
+                "Your arrogance sickens me. You believe my filthy brother can write an article better than I can? His pitiful scribblings barely stand up to my brilliance. Do you think that I am that replaceable? Fools. If only you knew that my words-- my articles –are the only thing keeping your wretched excuse of a company from crumbling to dust. I will laugh and laugh once The Best News™ is remembered only as a joke, something to mock and jeer at. And my name will be carved into the walls of history to be remembered for years to come."
+            </div>
+            
+            <p>Unfortunately, Johnny is incorrect. The <span class="highlight">plongly-schlongy bits</span> are, in fact, called <span class="highlight">shoelaces</span>. They're little stringy bits that go through holes in the top of your shoes and hang there. More intelligent humans are able to weave the shoelaces in such a way that they are fastened to the foot. Some people in older times believed that shoelaces kept spirits from being absorbed into the toes. Not to be confused with lacing, where you stick a drug into someone's drink.</p>
+        </section>
+
+        <section>
+            <h2>HITLER SHOES</h2>
+            <p>Many historical figures have worn shoes. <span class="highlight">Adolf Hitler</span>, for example, wore shoes during the holocaust. They weren't green.</p>
+        </section>
+
+        <section>
+            <h2>CONCLUSION</h2>
+            <p>In conclusion, shoes are footwear that are worn on feet. Feet are the fleshy bit at the end of ankles. Not to be confused with ankles, which are the fleshy bit at the end of calves. Not to be confused with calves, which are adolescent cows. Not to be confused with cows, which are P.E teachers. Not to be confused with P.E, which starts for Puper Euler. Not to be confused with Euler, who was a guy who liked Mathematics.</p>
+        </section>
+    </main>
+
+    <div class="article-author">
+        <img src="./Assets/bobby_headshot.png" alt="Bobby Schwaterburg">
+        <div class="author-info">
+            <p><strong>written by Bobby Schwaterburg</strong></p>
+            <p>the older brother of Johnny Article-man</p>
+            <p>fetishist and expert in footwear and foot-related stuff.</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 the best news</p>
+        <p class="blink">THE GLORPUS!!!!!!</p>
+    </footer>
+</div>
+
+</body>
+</html>
