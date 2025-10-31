@@ -83,6 +83,57 @@
             text-transform: uppercase;
             transform: rotate(-1deg);
         }
+
+        /* TODAY'S NEWS Button Styles */
+        .todays-news-container {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            background: linear-gradient(45deg, #FF0000, #FFFF00, #00FF00, #0000FF, #FF00FF);
+            border: 10px double #FFFFFF;
+            transform: rotate(1deg);
+        }
+        
+        .todays-news-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #FF0000, #FFA500, #FFFF00, #00FF00, #0000FF, #8A2BE2);
+            color: #FFFFFF;
+            font-size: 2.5rem;
+            font-weight: 900;
+            padding: 25px 50px;
+            text-decoration: none;
+            border: 8px ridge #FFFF00;
+            border-radius: 50px;
+            text-transform: uppercase;
+            text-shadow: 3px 3px 0 #000000;
+            box-shadow: 0 0 30px #FF00FF, 0 0 20px #00FFFF inset;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+            font-family: "Comic Sans MS", "Impact", fantasy;
+        }
+        
+        .todays-news-button:hover {
+            transform: scale(1.1) rotate(-3deg);
+            background: linear-gradient(135deg, #8A2BE2, #0000FF, #00FF00, #FFFF00, #FFA500, #FF0000);
+            box-shadow: 0 0 50px #FFFF00, 0 0 30px #FF0000 inset;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .update-disclaimer {
+            margin-top: 15px;
+            font-size: 1.2rem;
+            color: #FFFFFF;
+            background-color: #000000;
+            padding: 10px;
+            border: 3px dotted #FFFF00;
+            display: inline-block;
+            transform: rotate(-1deg);
+        }
         
         .articles-grid {
             display: grid;
@@ -290,6 +341,11 @@
                 font-size: 2rem;
             }
             
+            .todays-news-button {
+                font-size: 1.8rem;
+                padding: 20px 30px;
+            }
+            
             .articles-grid {
                 grid-template-columns: 1fr;
             }
@@ -320,11 +376,21 @@
         
         <div class="marquee">
             <marquee behavior="scroll" direction="left" scrollamount="10">
-                hey guys the best news website is back. i, Gary Radish, welcome you to the best news. we the best news. as the ambassador for the best news, i ask that you tell all your friends about the best news. i am also able to pay IN CASH if you make articles for the best news. join the ranks of our esteemed writers such as Johnny Article-Man and Bobby Schwaterburg. come back soon!
+                hey guys the best news website is back. i, Gary Radish, welcome you to the best news. we the best news. as the ambassador for the best news, i ask that you tell all your friends about the best news. i am also able to pay IN CASH if you make articles for the best news. join the ranks of our esteemed writers such as Johnny Article-Man and Bobby Schwaterburg. come back soon! if you want to do business with the best news (we the best news) or you are angry about students using the best news as a source for their essays or something, then email thebestnewsofficial+business@gmail.com
             </marquee>
         </div>
         
         <div class="welcome blink">weclome to best news</div>
+
+        <!-- TODAY'S NEWS Button -->
+        <div class="todays-news-container">
+            <a href="./Assets/breaking.html" class="todays-news-button">
+                TODAY'S NEWS!!
+            </a>
+            <div class="update-disclaimer">
+                Updated at about 12 PM AEST on weekdays
+            </div>
+        </div>
         
         <div class="articles-grid">
             <div class="article-card">
@@ -451,7 +517,37 @@
             audio.play().catch(e => console.log('Audio play failed:', e));
         });
         
-       
+        // Create 10,000 shoes in the background
+        function createShoes() {
+            const shoeContainer = document.createElement('div');
+            shoeContainer.id = 'shoe-container';
+            document.body.appendChild(shoeContainer);
+            
+            for (let i = 0; i < 10000; i++) {
+                const shoe = document.createElement('div');
+                shoe.className = 'shoe-bg';
+                
+                // Random position
+                const left = Math.random() * 100;
+                const top = Math.random() * 100;
+                
+                shoe.style.left = `${left}vw`;
+                shoe.style.top = `${top}vh`;
+                
+                // Random rotation
+                const rotation = Math.random() * 360;
+                shoe.style.transform = `rotate(${rotation}deg)`;
+                
+                // Random size variation
+                const scale = Math.random() * 0.5 + 0.5;
+                shoe.style.transform += ` scale(${scale})`;
+                
+                // Random opacity
+                shoe.style.opacity = Math.random() * 0.3 + 0.1;
+                
+                shoeContainer.appendChild(shoe);
+            }
+        }
         
         // Initialize on load
         window.addEventListener('load', function() {
