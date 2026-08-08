@@ -3,49 +3,38 @@
     <style>
       body {
         margin: 0;
-        overflow: hidden;
         background: #fff;
       }
 
       img {
-        position: absolute;
         width: 100px;
         height: auto;
       }
+
+      .chart {
+ 	 width: 100%;
+ 	 max-width: 1200px;
+ 	 height: auto;
+	}
     </style>
   </head>
   <body>
-    <img src="./Assets/best_news_logo.png" id="logo" alt="Best News Logo">
+    <img src="./Assets/best_news_logo.png" alt="Best News Logo">
     <p>OFFICIAL NERD DIRECTORY:</p>
     <img src="./Assets/cal.png" alt="CALI IS AN OFFICIAL NERD">
     <p>1. cali</p>
+<img src="./Assets/elena.png" alt="ELENA IS AN OFFICIAL NERD">
+    <p>2. elena</p>
+<img src="./Assets/fancy.png" alt="FANCY IS AN OFFICIAL NERD">
+    <p>3. fancy</p>
+<img src="./Assets/tef.png" alt="TEFLON IS AN OFFICIAL NERD">
+    <p>4. teflon</p>
     <br></br>
     <br></br>
+<img class="chart" src="./Assets/chart.png" alt="OFFICIAL NERD CHART">
+    <h1>COMPILED CHART ⬆⬆⬆⬆</p>
     <br></br>
     <p>source: greenyofficial on discord</p>
-    <script>
-      const img = document.getElementById("logo");
-      let x = 100;
-      let y = 100;
-      let dx = 3;
-      let dy = 3;
-
-      function bounce() {
-        const w = window.innerWidth - img.width;
-        const h = window.innerHeight - img.height;
-        x += dx;
-        y += dy;
-
-        if (x <= 0 || x >= w) dx = -dx;
-        if (y <= 0 || y >= h) dy = -dy;
-
-        img.style.left = x + "px";
-        img.style.top = y + "px";
-
-        requestAnimationFrame(bounce);
-      }
-
-      bounce();
-    </script>
+   
   </body>
 </html>
