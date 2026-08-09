@@ -1,0 +1,83 @@
+<html>
+<head>
+    <style>
+        html {
+            background-image: url('./Assets/back.png');
+            background-attachment: fixed;
+            background-size: 128px;
+            background-repeat: repeat;
+            background-position: center;
+            min-height: 100%;
+            image-rendering: pixelated;
+        }
+
+        body {
+            position: relative;
+            height: 100vh;
+            margin: 0;
+            color: white;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .TITLE {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 130px;
+            color: white;
+            font-family: "Comic Sans MS", serif;
+            margin: 48px;
+            text-align: center;
+        }
+
+        .button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+            .button.yes {
+                left: 10%;
+            }
+
+            .button.no {
+                right: 10%;
+            }
+
+            .button img {
+                height: auto;
+                display: block;
+                width: 256px;
+                margin: 0px;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="TITLE" id="titleText">ARE YOU INTERESTED IN CHILDREN?</div>
+
+    <div class="button yes" id="yesBtn">
+        <img src="./Assets/quiz/yesButton.png" alt="YES">
+    </div>
+    <div class="button no" id="noBtn">
+        <img src="./Assets/quiz/noButton.png" alt="NO">
+    </div>
+
+    <script>
+        document.getElementById('yesBtn').addEventListener('click', () => {
+            document.getElementById('titleText').innerText = 'grim is GAY for you!';
+            document.getElementById('yesBtn').remove();
+            document.getElementById('noBtn').remove();
+        });
+
+        document.getElementById('noBtn').addEventListener('click', () => {
+            document.getElementById('titleText').innerText = 'grim hates you';
+            document.getElementById('yesBtn').remove();
+            document.getElementById('noBtn').remove();
+        });
+    </script>
+
+</body>
+</html>
